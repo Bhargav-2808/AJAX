@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+    <script>
+        function prom(complete){
+            console.log("fetching");
+            return new Promise( (resolve, reject)=>{
+                if(complete)
+                {
+                   resolve("successfull");
+                }
+                else
+                {
+                    reject("failed");
+                }
+            });
+        }
+
+        let success = (result) =>{
+            console.log(result);
+        }
+        let fail = (error) =>{
+            console.log(error);
+        }
+
+        prom(true).then(success);
+        prom(true).catch(fail)
+
+
+
+    </script>
+
+    </body>
 </html>
